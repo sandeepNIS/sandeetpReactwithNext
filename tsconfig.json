@@ -13,19 +13,25 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "esnext", 
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/posts/register.tsx", "backend/routes/account.js", "backend/routes/app.js", "backend/routes/Route.js", "components/AccountForm.tsx", "components/Modal.tsx"  ],
-  "exclude": [
-    "node_modules"
+    "**/*.tsx",
+    "pages/posts/register.tsx",
+    "backend/routes/account.ts",
+    "backend/routes/app.ts",
+    "backend/routes/Route.ts",
+    "components/AccountForm.tsx",
+    "components/Modal.tsx"
   ],
- 
+  "exclude": [
+    "node_modules",
+    "<node_internals>/**"
+  ]
 }

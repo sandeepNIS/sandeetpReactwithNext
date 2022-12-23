@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  
-  "main": "index.js",
+  "main": "/routes/app.ts",
+ 
   "scripts": {
-    "start": " cd backend && cd routes && node app.js",
+    "start": " cd backend && cd routes && node app.ts",
     "client":"npm start todo",
     "dev": "concurrently \"npm run server\" \"npm run client\""
     

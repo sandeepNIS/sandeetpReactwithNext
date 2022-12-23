@@ -1,7 +1,8 @@
+// 
+// import { fs } from "./account";
+var express = require("express")
 // export{}
-const express = require("express")
 const bodyParser = require("body-parser")
-const fs = require('fs');
 // create our express app
 const app = express()
 // middleware
@@ -10,7 +11,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 // routae
 
-const routes = require('./Route.js')
+const routes = require('./Route.ts')
 // app.use('/', routes)
 app.use(cors())
 //start server
@@ -33,6 +34,7 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+
 // app.get("/", (req, res) => {
 //     var temo=console.log(__dirname);
 //   });

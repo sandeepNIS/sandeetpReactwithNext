@@ -1,8 +1,9 @@
 // account.js
+// export{fs}
+var express = require("express");
 // export{}
-const express = require("express")
-const accountRoutes = express.Router();
-const fs = require('fs');
+var accountRoutes = express.Router();
+var fs = require('fs');
 const { nextTick } = require("process");
 
 module.exports = accountRoutes
@@ -96,7 +97,7 @@ accountRoutes.delete('/account/delete/:id', (req, res) => {
       res.send(`accounts with id ${userId} has been deleted`)
     }, true);
   })
-
+  // export{}
   /*Post->create
   Get->read
   Put->Update/Replace
