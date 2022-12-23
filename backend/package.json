@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "/routes/app.ts",
- 
+  
   "scripts": {
-    "start": " cd backend && cd routes && node app.ts",
+    "start": " cd backend && cd routes &&  npx ts-node app.ts",
     "client":"npm start todo",
     "dev": "concurrently \"npm run server\" \"npm run client\""
     
