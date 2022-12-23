@@ -2,18 +2,31 @@
   "name": "todoapp",
   "version": "0.1.0",
   "private": true,
+  
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": " npm start",
+    "lint": "next lint",
+    "server": " cd backend && cd routes && node app.js",
+    "dev": " concurrently \"npm run server\" next dev "
   },
   "dependencies": {
     "@next/font": "13.0.7",
+    "axios": "^1.2.1",
+    "bootstrap": "^5.1.0",
+    "concurrently": "^7.6.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
+    "formik": "^2.2.9",
     "next": "13.0.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-bootstrap": "^2.5.0-beta.1",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.6.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@types/node": "18.11.17"
   }
 }
