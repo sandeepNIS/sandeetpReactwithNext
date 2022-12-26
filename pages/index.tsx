@@ -122,22 +122,22 @@
 //   )
 // }
 import Link from 'next/link';
-
-// import Styles from "./styles/index.module.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import styles from "./styles/index.module.css"
 
  function Navbar(){
-    return <>
+    return <nav className="navbar navbar-expand-lg navbar-light bg-light" >
         
-        <Link href="/posts/home"  >MyApp</Link>
-        <ul >
-            <li >
-            <Link href="/posts/register" >Register</Link> 
+        <Link href="/posts/home" className="navbar-brand">MyApp</Link>
+        <ul className='navbar-nav'>
+            <li className="nav-item active">
+            <Link href="/posts/register" className="nav-link">Register</Link> 
                 </li>
-                <li >
-                <Link href="/posts/list" >List</Link> 
+                <li className='nav-item '>
+                <Link href="/posts/list" className="nav-link">List</Link> 
             </li>
         </ul>
-    </>
+    </nav>
     
 }
 export default Navbar

@@ -3,7 +3,8 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, FormLabel, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
-
+// import Navbar from "../pages";
+import Link from 'next/link';
 
 const AccountForm = (props) => {
 const validationSchema = Yup.object().shape({
@@ -13,7 +14,21 @@ const validationSchema = Yup.object().shape({
 });
 console.log(props);
 return (
+	
 	<div className="form-wrapper">
+		<nav className="navbar navbar-expand-lg navbar-light bg-light" >
+        
+        <Link href="/posts/home" className="navbar-brand">MyApp</Link>
+        <ul className='navbar-nav'>
+            <li className="nav-item active">
+            <Link href="/posts/register" className="nav-link">Register</Link> 
+                </li>
+                <li className='nav-item '>
+                <Link href="/posts/list" className="nav-link">List</Link> 
+            </li>
+        </ul>
+    </nav>
+	<br/>
 	<Formik {...props} validationSchema={validationSchema}>
         <center>
            
@@ -60,6 +75,7 @@ return (
         </center>
 	</Formik>
 	</div>
+	
 );
 };
 

@@ -43,6 +43,7 @@ const onSubmit = studentObject => {
 
 // Return student form
 return(
+	
 	<AccountForm initialValues={formValues}
 	onSubmit={onSubmit}
 	enableReinitialize>
