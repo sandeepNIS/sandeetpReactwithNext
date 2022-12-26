@@ -6,7 +6,7 @@ import { Table } from "react-bootstrap";
 import AccountTableRow from "../../components/AccountTableRow";
 // import Navbar from "..";
 import Link from 'next/link';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import ModalList from "../Component/Modal2";
 
@@ -37,16 +37,16 @@ const DataTable = () => {
 
 return (
 	<div>
-	<div>
-<nav className="navbar navbar-expand-lg navbar-light bg-light" >
+		<div>
+<nav className="nav">
         
-        <Link href="/posts/home" className="navbar-brand">MyApp</Link>
-        <ul className='navbar-nav'>
-            <li className="nav-item active">
+        <Link href="/posts/home" className="site-title"  >MyApp</Link>
+        <ul >
+            <li className="active">
             <Link href="/posts/register" className="nav-link">Register</Link> 
-                </li>
-                <li className='nav-item '>
-                <Link href="/posts/list" className="nav-link">List</Link> 
+            </li>               
+                <li className="active">
+                <Link href="/posts/list" className="nav-link">List</Link>
             </li>
         </ul>
     </nav>

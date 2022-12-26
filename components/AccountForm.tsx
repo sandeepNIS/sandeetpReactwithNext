@@ -16,7 +16,7 @@ console.log(props);
 return (
 	
 	<div className="form-wrapper">
-		<nav className="navbar navbar-expand-lg navbar-light bg-light" >
+		{/* <nav className="navbar navbar-expand-lg navbar-light bg-light" >
         
         <Link href="/posts/home" className="navbar-brand">MyApp</Link>
         <ul className='navbar-nav'>
@@ -27,7 +27,20 @@ return (
                 <Link href="/posts/list" className="nav-link">List</Link> 
             </li>
         </ul>
+    </nav> */}
+	<nav className="nav">
+        
+        <Link href="/posts/home" className="site-title"  >MyApp</Link>
+        <ul >
+            <li className="active">
+            <Link href="/posts/register" className="nav-link">Register</Link> 
+            </li>               
+                <li className="active">
+                <Link href="/posts/list" className="nav-link">List</Link>
+            </li>
+        </ul>
     </nav>
+    
 	<br/>
 	<Formik {...props} validationSchema={validationSchema}>
         <center>
