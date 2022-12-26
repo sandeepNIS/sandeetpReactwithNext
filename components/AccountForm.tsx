@@ -28,18 +28,7 @@ return (
             </li>
         </ul>
     </nav> */}
-	<nav className="nav">
-        
-        <Link href="/posts/home" className="site-title"  >MyApp</Link>
-        <ul >
-            <li className="active">
-            <Link href="/posts/register" className="nav-link">Register</Link> 
-            </li>               
-                <li className="active">
-                <Link href="/posts/list" className="nav-link">List</Link>
-            </li>
-        </ul>
-    </nav>
+	
     
 	<br/>
 	<Formik {...props} validationSchema={validationSchema}>

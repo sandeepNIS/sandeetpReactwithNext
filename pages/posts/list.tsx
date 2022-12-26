@@ -37,21 +37,6 @@ const DataTable = () => {
 
 return (
 	<div>
-		<div>
-<nav className="nav">
-        
-        <Link href="/posts/home" className="site-title"  >MyApp</Link>
-        <ul >
-            <li className="active">
-            <Link href="/posts/register" className="nav-link">Register</Link> 
-            </li>               
-                <li className="active">
-                <Link href="/posts/list" className="nav-link">List</Link>
-            </li>
-        </ul>
-    </nav>
-	<br/>
-	</div>
 	<div  className="table-wrapper table-responsive table-responsive{-sm|-md|-lg|-xl}   overflow-x:auto;" >
 		{/* //table-responsive size="sm" */}
 	<Table className="table" striped bordered hover  responsive size="sm" w-auto >
