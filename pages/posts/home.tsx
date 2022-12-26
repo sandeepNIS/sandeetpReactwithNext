@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import Navbar from '..';
 export default function Home() {
     return(
       <div>
@@ -9,4 +6,4 @@ export default function Home() {
     </center>
     </div> ) 
      
-  }
+  } 

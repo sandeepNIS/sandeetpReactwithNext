@@ -2,7 +2,7 @@
     return(
         <div>
       <center>
-      <h2>Welcome to home page</h2>
+      <h2>Welcome to our website</h2>
       </center>
       </div> ) 
     

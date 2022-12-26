@@ -1,9 +1,11 @@
 import Link from 'next/link'; 
+import Head from 'next/head';
 const Navbar = () => {
     return(
-
     <nav className="nav">
-        
+        <Head>
+      <title>Hello World</title>
+    </Head>
         <Link href="/posts/home" className="site-title"  >MyApp</Link>
         <ul >
             <li className="active">

@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
-// import '../Component/RespTable.css';
-// import AccountTableRow from "../Component/AccountTableRow";
 import AccountTableRow from "../../components/AccountTableRow";
-// import Navbar from "..";
-import Link from 'next/link';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-// import ModalList from "../Component/Modal2";
-
 const List = () => {
 const [accounts, setAccounts] = useState([]);
 
-// const handleClicko=(e)=>{
-//     setAccounts(e.target.value);
-//     // e.preventDefault();
-//     }
+
 	
 useEffect(() => {
 	axios
@@ -28,7 +17,7 @@ useEffect(() => {
 		console.log(error);
 	});
 }, []);
-//handleClicko={handleClicko} 
+
 const DataTable = () => {
 	return accounts.map((res, i) => {
 	return <AccountTableRow obj={res} key={i}   />;
@@ -38,10 +27,10 @@ const DataTable = () => {
 return (
 	<div>
 	<div  className="table-wrapper table-responsive table-responsive{-sm|-md|-lg|-xl}   overflow-x:auto;" >
-		{/* //table-responsive size="sm" */}
+		
 	<Table className="table" striped bordered hover  responsive size="sm" w-auto >
 		<thead>
-		{/* onClick={<ModalList/>} */}
+		
 		<tr >
 			<th> Name </th>
 			<th> Email </th>
