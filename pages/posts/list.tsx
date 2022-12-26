@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
-// import styles from 'table.module.css'
-import 'todoapp/styles/table.module.css'
 import AccountTableRow from "../../components/AccountTableRow";
 const List = () => {
 const [accounts, setAccounts] = useState([]);
@@ -28,6 +26,7 @@ const DataTable = () => {
 
 return (
 	<div>
+		 <br />
 	<div  className="table-wrapper table-responsive table-responsive{-sm|-md|-lg|-xl}   overflow-x:auto;" >
 		
 	<Table className="table" striped bordered hover  responsive size="sm" w-auto="true" >
@@ -45,6 +44,7 @@ return (
 		</tbody>
 	</Table>
 	</div>
+	
 	</div>
 	
 );

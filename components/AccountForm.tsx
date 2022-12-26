@@ -2,7 +2,7 @@ import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, FormLabel, Button } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 
 const AccountForm = (props) => {
@@ -22,8 +22,8 @@ return (
 		<Form>
 		<FormGroup>
         <FormLabel>Name</FormLabel>
-			<Field name="username" type="text"
-				className="form-control "autoFocus  />
+			<Field   name="username" type="text"
+				className="form-control"   />
 			<ErrorMessage
 			name="username"
 			className="d-block invalid-feedback"

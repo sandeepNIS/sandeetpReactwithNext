@@ -1,8 +1,9 @@
 
-import '../styles/index.css'
+// import '../styles/index.css'
 import '../styles/table.css'
 import { AppProps } from 'next/app'
-import Navbar from '../components/navbar'
+import 'bootstrap/dist/css/bootstrap.css';
+import Navbar from '../components/navba';
 
 export default function App({ Component, pageProps }:AppProps) {
   return (

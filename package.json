@@ -7,7 +7,7 @@
     "start": " npm start",
     "lint": "next lint",
     "server": " cd backend && cd routes && npx ts-node app.ts",
-    "dev": " concurrently \"npm run server\" next dev "
+    "dev": " concurrently \"npm run server\" \"next dev\" "
   },
   "dependencies": {
     "@next/font": "13.0.7",
@@ -22,6 +22,7 @@
     "react-bootstrap": "^2.5.0-beta.1",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.6.0",
+    "superagent": "^8.0.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {

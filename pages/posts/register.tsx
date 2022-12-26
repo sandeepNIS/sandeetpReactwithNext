@@ -2,7 +2,7 @@
 import React, { useState} from "react";
 import axios from 'axios';
 import AccountForm from "../../components/AccountForm";
-
+import Link from "next/link";
 const Register = () => {
 const [formValues, setFormValues] =
 	useState({ username:'', email: '', password: '' })

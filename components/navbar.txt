@@ -1,6 +1,6 @@
 import Link from 'next/link'; 
 import Head from 'next/head';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 const Navbar = () => {
     return(
     <nav className="nav">
