@@ -6,7 +6,10 @@ const Navbar = () => {
     return(
     <nav className={Styles.nav}>
         <Head>
-      <title>Hello World</title>
+      <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
+          rel="stylesheet"
+        />
     </Head>
         <Link href="/" className={Styles.sitetitle}  >MyApp</Link>
         <ul className={Styles.ul}>

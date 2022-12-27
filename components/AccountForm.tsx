@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, FormLabel, Button } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.css';
-
+import Styles from './AccountForm.module.css'
 
 const AccountForm = (props) => {
 const validationSchema = Yup.object().shape({
@@ -14,16 +14,16 @@ const validationSchema = Yup.object().shape({
 console.log(props);
 return (
 	
-	<div className="form-wrapper">
+	<div className="form-group">
 	<br/>
 	<Formik {...props} validationSchema={validationSchema}>
         <center>
            
-		<Form>
+		<Form className={Styles.form}>
 		<FormGroup>
-        <FormLabel>Name</FormLabel>
+        <FormLabel >Name</FormLabel>
 			<Field   name="username" type="text"
-				className="form-control"   />
+				className="form-control "   />
 			<ErrorMessage
 			name="username"
 			className="d-block invalid-feedback"
@@ -60,6 +60,11 @@ return (
 		</Form>
         </center>
 	</Formik>
+	<style jsx>{`
+        .form-control{
+			width:170px;
+        }
+      `}</style>
 	</div>
 	
 );
