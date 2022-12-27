@@ -22,7 +22,16 @@ app.use(cors())
 // const routes = require('./Route')
 app.use('/', routes)
 const port = process.env.PORT || 3080;
+var url = ''
+  if (process.env.NODE_ENV === 'development') {
+    url = 'http://localhost' // you must hardcode it somewhere. In production you don't.
+  }
+  {
+  baseURL: 'https://domain.com/foo/bar' + '/' // in production the url variable will be set to the root url of your domain. '/' forces        the basedURL to only use the root url with NO endpoints.
+}
 const server = app.listen(port, () => {
+  
+  
   console.log('Connected to port ' + port)
 })
 console.log(server);

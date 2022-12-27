@@ -12,6 +12,8 @@
   "dependencies": {
     "@next/font": "13.0.7",
     "axios": "^1.2.1",
+    "babel-plugin-inline-dotenv": "^1.7.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "bootstrap": "^5.1.0",
     "concurrently": "^7.6.0",
     "eslint": "8.30.0",
