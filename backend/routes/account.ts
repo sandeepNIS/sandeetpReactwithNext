@@ -9,8 +9,8 @@ const { nextTick } = require("process");
 
 module.exports = accountRoutes
 // const dataPath = './details_folder/account.json'
-// const dataPath = `C:/react-next-app/todoapp/backend/details_folder/account.json` // path to our JSON file
-const dataPath = `C:/React-step/sandeepTaskReact/step-by-step/backend/details_folder/account.json` // path to our JSON file
+const dataPath = `C:/react-next-app/todoapp/backend/details_folder/account.json` // path to our JSON file
+// const dataPath = `C:/React-step/sandeepTaskReact/step-by-step/backend/details_folder/account.json` // path to our JSON file
 
 // util functions
 const saveAccountData = (data) => {
