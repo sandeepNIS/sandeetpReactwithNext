@@ -1,3 +1,4 @@
+
 const superagent = require("superagent");
 
 export default function handler(req, res) {
@@ -9,6 +10,7 @@ export default function handler(req, res) {
   superagent.get(`http://numbersapi.com/${number}`).then((response) => {
     res.status(200).send(response.text);
   });
+
 }   
 //In this example, we're going to return a random fact from an external API
 //  (http://numbersapi.com/) about every number query we receive on the API endpoint. 

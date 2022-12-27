@@ -7,10 +7,10 @@ const Register = () => {
 const [formValues, setFormValues] =
 	useState({ username:'', email: '', password: '' })
 
-const onSubmit = studentObject => {
+const onSubmit = accountObject => {
 	axios.post(
 'http://localhost:3080/account/addaccount',
-	studentObject)
+	accountObject)
 	.then(res => {
 		if (res.status === 200){
 			alert('Account successfully created')
