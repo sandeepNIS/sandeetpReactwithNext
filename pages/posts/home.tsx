@@ -1,14 +1,6 @@
 import Link from "next/link"
 
-export async function getServerSideProps(context) {
-  const res = await fetch(`http://localhost:3080/account/list`)
-  const posts = await res.json();
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+
 export default function Home({posts}) {
     return(
 
@@ -29,14 +21,6 @@ export default function Home({posts}) {
         }
       `}</style>
       <br/>
-      <h6>Number of users REGISTERED </h6>
-          <ol typeof="number" >
-      {posts.map(({ id, username,email}) => (
-            <li  key={id}>
-             <p>{username} ----{email}</p> 
-            </li>
-          ))} 
-        </ol>
        
     </div> ) 
      
