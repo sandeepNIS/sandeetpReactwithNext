@@ -30,7 +30,7 @@ let NEXT_PUBLIC_API_URL='';
   if (process.env.NODE_ENV === 'development') {
     NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
   }else{
-    NEXT_PUBLIC_API_URL = `https:prod:${port}`
+    NEXT_PUBLIC_API_URL = `http:prod:${port}`
   }
  
 
