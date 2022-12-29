@@ -20,8 +20,7 @@ let userData = (data) => {
 const deleteAccount = () => {
 	let confirmAction=confirm("are you sure to delete");
 	axios
-	.delete(
-"http://localhost:3080/account/delete/" +id)
+	.delete(`${process.env.NEXT_PUBLIC_API_URL}/account/delete/` +id)
 	.then((res) => {
 		if (res.status === 200 && confirmAction) {
 		alert("Account successfully deleted");

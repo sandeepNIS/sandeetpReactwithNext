@@ -9,7 +9,7 @@ const [formValues, setFormValues] =
 
 const onSubmit = accountObject => {
 	axios.post(
-'http://localhost:3080/account/addaccount',
+`${process.env.NEXT_PUBLIC_API_URL}/account/addaccount`,
 	accountObject)
 	.then(res => {
 		if (res.status === 200){

@@ -9,7 +9,7 @@ const [accounts, setAccounts] = useState([]);
 	
 useEffect(() => {
 	axios
-	.get(`http://localhost:3080/account/list`)
+	.get(`${process.env.NEXT_PUBLIC_API_URL}/account/list`)
 	.then(({ data }) => {
 		setAccounts(data);
 	})

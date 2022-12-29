@@ -21,20 +21,23 @@ app.use(cors())
 // }) 
 // const routes = require('./Route')
 app.use('/', routes)
+// const port = process.env.PORT || 3080;
+// var url = ''
+
 const port = process.env.PORT || 3080;
-var url = ''
+
+let NEXT_PUBLIC_API_URL='';
   if (process.env.NODE_ENV === 'development') {
-    url = 'http://localhost' // you must hardcode it somewhere. In production you don't.
+    NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
+  }else{
+    NEXT_PUBLIC_API_URL = `https:prod:${port}`
   }
-  {
-  baseURL: 'https://domain.com/foo/bar' + '/' // in production the url variable will be set to the root url of your domain. '/' forces        the basedURL to only use the root url with NO endpoints.
-}
-const server = app.listen(port, () => {
-  
-  
-  console.log('Connected to port ' + port)
-})
-console.log(server);
+ 
+
+  const server = app.listen(port, () => {
+    console.log('Connected to port ' + port)
+  })
+  console.log(server);
 
 
 app.use(function(req, res, next) {
