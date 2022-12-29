@@ -1,5 +1,8 @@
 // 
 // export default undefined 
+
+import path from "path";
+
 // import { fs } from "./account";
 var express = require("express")
 export{}
@@ -28,7 +31,7 @@ const port = process.env.PORT || 3080;
 
 let NEXT_PUBLIC_API_URL='';
   if (process.env.NODE_ENV === 'development') {
-    NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
+    NEXT_PUBLIC_API_URL = `http:localhost:3080` // you must hardcode it somewhere. In production you don't.
   }else{
     NEXT_PUBLIC_API_URL = `http:prod:${port}`
   }
@@ -38,7 +41,12 @@ let NEXT_PUBLIC_API_URL='';
     console.log('Connected to port ' + port)
   })
   console.log(server);
+  app.use(express.static(path.join(__dirname, 'build')));
 
+  -app.get('/', function (req, res) {
+  +app.get('/*', function (req, res) {
+     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+   });
 
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -59,8 +67,5 @@ app.use(function(req, res, next) {
 
 //   app.get("/register", (req, res) =>{
 //     res.sendFile(`${__dirname}/Register.html`)
-//   });
-
-//   app.get("/List", (req, res) =>{
-//     res.sendFile(`${__dirname}/List.html`)
-//   });
+//   })       
+  })
