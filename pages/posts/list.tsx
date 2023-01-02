@@ -9,7 +9,7 @@ const [accounts, setAccounts] = useState([]);
 	
 useEffect(() => {
 	axios
-	.get(`https://kaleidoscopic-pony-b7520d.netlify.app/account/list`)
+	.get(`/account/list`)
 	.then(({ data }) => {
 		setAccounts(data);
 	})
