@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useRouter } from 'next/router';
 import { Table } from "react-bootstrap";
 import AccountTableRow from "../components/AccountTableRow";
 
-export async function getServerSideProps(){
+export async function getServerSideProps(context){
 	// const allPostsData = getSortedPostsData();
 	const res = await fetch(`https://b6a4-119-82-104-94.in.ngrok.io/account/list`)
 	const posts = await res.json();
@@ -14,6 +15,12 @@ export async function getServerSideProps(){
 	};
   }
 const Listt = ({posts}) => {
+	const router = useRouter();
+  // Call this function whenever you want to
+  // refresh props!
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
 const [accounts, setAccounts] = useState([]);
 
 
@@ -34,7 +41,7 @@ useEffect(() => {
 
 
 const DataTable = () => {
-	return posts.map((res, i) => {
+	return accounts.map((res, i) => {
 	return <AccountTableRow obj={res} key={i}   />;
 	});
 };
