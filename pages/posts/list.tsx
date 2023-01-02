@@ -9,7 +9,7 @@ const [accounts, setAccounts] = useState([]);
 	
 useEffect(() => {
 	axios
-	.get(` https://b6a4-119-82-104-94.in.ngrok.io/account/list`)
+	.get(`https://b6a4-119-82-104-94.in.ngrok.io/account/list`)
 	.then(({ data }) => {
 		setAccounts(data);
 	})
