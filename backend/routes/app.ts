@@ -28,11 +28,8 @@ app.use(cors())
 // const routes = require('./Route')\\
 app.use('/', routes)
 const port = process.env.PORT || 3080;let NEXT_PUBLIC_API_URL='';
-  if (process.env.NODE_ENV === 'development') {
-    NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
-  }else{
+ 
     NEXT_PUBLIC_API_URL = ` https://b6a4-119-82-104-94.in.ngrok.io`
-  }
 const server = app.listen(port, () => {
   // http://localhost:80 
   // console.log('connected to url'+NEXT_PUBLIC_API_URL);
