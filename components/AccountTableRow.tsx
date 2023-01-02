@@ -20,7 +20,7 @@ let userData = (data) => {
 const deleteAccount = () => {
 	let confirmAction=confirm("are you sure to delete");
 	axios
-	.delete(`https://b6a4-119-82-104-94.in.ngrok.io/account/delete/` +id)
+	.delete(`https://b6a4-119-82-104-94.in.ngrok.io/account/delete/`+id)
 	.then((res) => {
 		if (res.status === 200 && confirmAction) {
 		alert("Account successfully deleted");
