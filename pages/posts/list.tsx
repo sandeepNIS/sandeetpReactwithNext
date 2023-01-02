@@ -12,9 +12,6 @@ useEffect(() => {
 		`https://b6a4-119-82-104-94.in.ngrok.io/account/list`)
 	.then(({ data }) => {
 		setAccounts(data);
-		if (data.status === 200 ) {
-			console.log("acount list");
-		} else Promise.reject();
 	})
 	.catch((error) => {
 		console.log(error);
