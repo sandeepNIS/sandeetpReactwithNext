@@ -2,19 +2,19 @@
 import Image from 'next/image'
 
 
-// export async function getStaticProps() {
-//   // const allPostsData = getSortedPostsData();
-//   const res = await fetch(`http://localhost:3080/account/list`)
-//   const posts = await res.json();
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  // const allPostsData = getSortedPostsData();
+  const res = await fetch(`https://b6a4-119-82-104-94.in.ngrok.io/account/list`)
+  const posts = await res.json();
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 
-export default function Custom404() {
+export default function Custom404({posts}) {
     return (
       <div>
         <center>
@@ -31,7 +31,17 @@ export default function Custom404() {
           color: red;
         }
       `}</style>
-
+      <ul>
+    {posts.map(({ id, username, email }) => (
+            <li  key={id}>
+              {id}
+              <br />
+              {username}
+              <br />
+              {email}
+            </li>
+          ))}
+        </ul>
         
 	
       </div>
