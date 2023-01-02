@@ -9,7 +9,7 @@ const [formValues, setFormValues] =
 
 const onSubmit = accountObject => {
 	axios.post(
-`${process.env.NEXT_PUBLIC_API_URL}/account/addaccount`,
+`https://b6a4-119-82-104-94.in.ngrok.io/account/addaccount`,
 	accountObject)
 	.then(res => {
 		if (res.status === 200){
