@@ -31,7 +31,7 @@ const port = process.env.PORT || 3080;let NEXT_PUBLIC_API_URL='';
   if (process.env.NODE_ENV === 'development') {
     NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
   }else{
-    NEXT_PUBLIC_API_URL = `https://kaleidoscopic-pony-b7520d.netlify.app`
+    NEXT_PUBLIC_API_URL = ` https://b6a4-119-82-104-94.in.ngrok.io`
   }
 const server = app.listen(port, () => {
   // http://localhost:80 
