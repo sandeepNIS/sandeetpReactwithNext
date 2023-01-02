@@ -15,12 +15,12 @@ export async function getServerSideProps(context){
 	};
   }
 const Listt = ({posts}) => {
-	const router = useRouter();
-  // Call this function whenever you want to
-  // refresh props!
-  const refreshData = () => {
-    router.replace(router.asPath);
-  }
+// 	const router = useRouter();
+//   // Call this function whenever you want to
+//   // refresh props!
+//   const refreshData = () => {
+//     router.replace(router.asPath);
+//   }
 const [accounts, setAccounts] = useState([]);
 
 
