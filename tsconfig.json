@@ -29,7 +29,7 @@
     "backend/routes/Route.ts",
     "components/AccountForm.tsx",
     "components/Modal.tsx"
-  ],
+, "components/SpinnerLoading.js"  ],
   "exclude": [
     "node_modules",
     "<node_internals>/**"

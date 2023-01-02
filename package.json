@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
- 
   "scripts": {
     "build": "next build",
     "start": " npm start",
@@ -26,6 +25,7 @@
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0-beta.1",
     "react-dom": "18.2.0",
+    "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.6.0",
     "superagent": "^8.0.6",
     "swr": "^2.0.0",
