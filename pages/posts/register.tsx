@@ -4,7 +4,7 @@ import axios from 'axios';
 import AccountForm from "../../components/AccountForm";
 import Link from "next/link";
 import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import SpinnerLoading from "../../components/SpinnerLoading";
 const Register = () => {
 const [formValues, setFormValues] =
