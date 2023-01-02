@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useRouter } from 'next/router';
+import router, { useRouter } from 'next/router';
 import { Table } from "react-bootstrap";
 import AccountTableRow from "../components/AccountTableRow";
 
@@ -15,12 +15,20 @@ export async function getServerSideProps(context){
 	};
   }
 const Listt = ({posts}) => {
-	const router = useRouter();
-  // Call this function whenever you want to
-  // refresh props!
+// 	const router = useRouter();
+//   // Call this function whenever you want to
+//   // refresh props!
+//   const refreshData = () => {
+//     router.replace(router.asPath);
+//   }
+  const [isRefreshing, setIsRefreshing] = React.useState(false);
   const refreshData = () => {
     router.replace(router.asPath);
-  }
+    setIsRefreshing(true);
+  };
+  React.useEffect(() => {
+    setIsRefreshing(false);
+  }, [posts]);
 const [accounts, setAccounts] = useState([]);
 
 
