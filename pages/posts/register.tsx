@@ -3,10 +3,13 @@ import React, { useState} from "react";
 import axios from 'axios';
 import AccountForm from "../../components/AccountForm";
 import Link from "next/link";
-import Loader from "react-loader-spinner";
+import ButtonLoading from "../../components/ButtonLoading"
+// import { Loader } from "../../components/SpinnerLoading";
 
-import SpinnerLoading from "../../components/SpinnerLoading";
+// import SpinnerLoading from "../../components/SpinnerLoading";
+// import Loader from "../../components/SpinnerLoading";
 const Register = () => {
+	
 const [formValues, setFormValues] =
 	useState({ username:'', email: '', password: '' })
 
@@ -16,7 +19,7 @@ const onSubmit = accountObject => {
 	accountObject)
 	.then(res => {
 		if (res.status === 200){
-			<SpinnerLoading/>
+			
 			alert('Account successfully created')
 			const { username, email, password } = res.data;
         setFormValues({ username, email, password });
