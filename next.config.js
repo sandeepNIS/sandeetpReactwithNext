@@ -17,6 +17,14 @@
 //   return basePath
 // }
 const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/account/list',
+        destination: `https://b6a4-119-82-104-94.in.ngrok.io/account/list`,
+      },
+    ]
+  },
   // assetPrefix: getBasePath() ,
 
   //   publicRuntimeConfig: {

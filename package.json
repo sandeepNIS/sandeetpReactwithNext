@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
-  "proxy": "http://localhost:3080",
+  "proxy": "",
   "scripts": {
     "build": "next build",
     "start": " npm start",
