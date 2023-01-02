@@ -27,7 +27,7 @@ app.use(cors())
 // }) 
 // const routes = require('./Route')\\
 app.use('/', routes)
-const port = process.env.PORT || 80;let NEXT_PUBLIC_API_URL='';
+const port = process.env.PORT || 3080;let NEXT_PUBLIC_API_URL='';
   if (process.env.NODE_ENV === 'development') {
     NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
   }else{
