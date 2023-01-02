@@ -7,7 +7,7 @@
     "build": "next build",
     "start": " npm start",
     "lint": "next lint",
-    "server": " cd backend && cd routes && npx ts-node app.ts",
+    "server": " cd backend && cd routes &&  npx ts-node app.ts",
     "dev": " concurrently \"npm run server\" \"next dev\" "
   },
   "dependencies": {

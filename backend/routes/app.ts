@@ -1,12 +1,15 @@
 // 
 // export default undefined 
 
-import path from "path";
+
+
 
 // import { fs } from "./account";
-var express = require("express")
+
 export{}
+const express = require("express")
 const bodyParser = require("body-parser")
+const fs = require('fs');
 // create our express app
 const app = express()
 // middleware
@@ -22,32 +25,18 @@ app.use(cors())
 // app.listen(4021, ()=>{
 //     console.log("listeniing at port:4021")
 // }) 
-// const routes = require('./Route')
+// const routes = require('./Route')\\
 app.use('/', routes)
-// const port = process.env.PORT || 3080;
-// var url = ''
-
-const port = process.env.PORT || 3080;
-
-let NEXT_PUBLIC_API_URL='';
+const port = process.env.PORT || 3080;let NEXT_PUBLIC_API_URL='';
   if (process.env.NODE_ENV === 'development') {
-    NEXT_PUBLIC_API_URL = `http:localhost:3080` // you must hardcode it somewhere. In production you don't.
+    NEXT_PUBLIC_API_URL = `http:localhost:${port}` // you must hardcode it somewhere. In production you don't.
   }else{
-    NEXT_PUBLIC_API_URL = `http:prod:${port}`
+    NEXT_PUBLIC_API_URL = `https://kaleidoscopic-pony-b7520d.netlify.app`
   }
- 
-
-  const server = app.listen(port, () => {
-    console.log('Connected to port ' + port)
-  })
-  console.log(server);
-  app.use(express.static(path.join(__dirname, 'build')));
-
-  -app.get('/', function (req, res) {
-  +app.get('/*', function (req, res) {
-     res.sendFile(path.join(__dirname, 'build', 'index.html'));
-   });
-
+const server = app.listen(port, () => {
+  console.log('Connected to port ' + port)
+})
+console.log(server);
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -55,7 +44,6 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-
 // app.get("/", (req, res) => {
 //     var temo=console.log(__dirname);
 //   });
@@ -67,5 +55,8 @@ app.use(function(req, res, next) {
 
 //   app.get("/register", (req, res) =>{
 //     res.sendFile(`${__dirname}/Register.html`)
-//   })       
-  })
+//   });
+
+//   app.get("/List", (req, res) =>{
+//     res.sendFile(`${__dirname}/List.html`)
+//   });
