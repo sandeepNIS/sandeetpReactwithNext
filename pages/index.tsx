@@ -3,7 +3,7 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 import AccountTableRow from "../components/AccountTableRow";
 
-export async function getStaticProps() {
+export async function getServerSideProps(){
 	// const allPostsData = getSortedPostsData();
 	const res = await fetch(`https://b6a4-119-82-104-94.in.ngrok.io/account/list`)
 	const posts = await res.json();
@@ -28,6 +28,9 @@ const [accounts, setAccounts] = useState([]);
 // 		console.log(error);
 // 	});
 // }, []);
+useEffect(() => {
+		setAccounts(posts);
+	});
 
 
 const DataTable = () => {
