@@ -6,7 +6,7 @@ import AccountTableRow from "../components/AccountTableRow";
 
 export async function getServerSideProps(context){
 	// const allPostsData = getSortedPostsData();
-	const res = await fetch(`https://27f3-119-82-104-94.in.ngrok.io/account/list`)
+	const res = await fetch(`https://7df4-119-82-104-94.in.ngrok.io/account/list`)
 	const posts = await res.json();
 	return {
 	  props: {
