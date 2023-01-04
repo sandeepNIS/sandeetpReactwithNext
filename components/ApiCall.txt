@@ -1,0 +1,51 @@
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+
+// Import hooks provided by react-redux
+import { useSelector, useDispatch } from "react-redux";
+// import AccountTableRow from "../components/AccountTableRow";
+
+import { getUsersData } from "../redux/actions/userActions";
+import Loaderr from "../redux/load";
+
+const BasicDetails: React.FC = () => {
+	// const [accounts, setAccounts] = useState([]);
+    const usersData = useSelector((state: any) => state?.users?.userData);
+    const dispatch = useDispatch();
+
+    const fetchUsers = async () => {
+        await axios.get(`http://localhost:3080/account/list`)
+        .then((res) => {
+            dispatch(getUsersData(res.data))
+            console.log(res.data)
+        })
+    }
+
+    useEffect(() => {
+        fetchUsers()
+    },[])
+
+    return (
+        <>
+
+            <h1>Users:</h1>
+            {
+                (!usersData && usersData == undefined) ? 
+                    <>
+                        <Loaderr/>
+                    </>
+                    :
+				usersData.map((individualUserData: any) => (
+					<>
+						<h3>id: {individualUserData.id}</h3>
+						<h4>name: {individualUserData.username}</h4>
+						<h4>email: {individualUserData.email}</h4>
+					</>
+				))  
+            }
+            
+        </>
+    )
+}
+
+export default BasicDetails;

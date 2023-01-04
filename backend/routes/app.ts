@@ -29,7 +29,7 @@ app.use(cors())
 app.use('/', routes)
 const port = process.env.PORT || 3080;let NEXT_PUBLIC_API_URL='';
  
-    NEXT_PUBLIC_API_URL = `https://27f3-119-82-104-94.in.ngrok.io`
+    NEXT_PUBLIC_API_URL = `https://7df4-119-82-104-94.in.ngrok.io`
 const server = app.listen(port, () => {
   // http://localhost:80 
   // console.log('connected to url'+NEXT_PUBLIC_API_URL);
