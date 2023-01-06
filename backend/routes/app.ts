@@ -36,13 +36,25 @@ const server = app.listen(port, () => {
   
   console.log('Connected to port ' + port)
 })
+
 console.log(server);
 app.use(function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
+  const allowedOrigins = [`https://294a-119-82-104-94.in.ngrok.io`, 'http://localhost:3080'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content- Type, Accept");
+// res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+res.header('Access-Control-Allow-Credentials', true);
+res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+next();
+
+  // res.setHeader('Access-Control-Allow-Origin', '*');
+  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  // res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  // res.setHeader('Access-Control-Allow-Credentials', true);
+  // next();
 });
 // app.get("/", (req, res) => {
 //     var temo=console.log(__dirname);

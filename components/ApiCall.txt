@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 // import AccountTableRow from "../components/AccountTableRow";
 
 import { getUsersData } from "../redux/actions/userActions";
-import Loaderr from "../redux/load";
+import Loader from "./loader";
 
 const BasicDetails: React.FC = () => {
 	// const [accounts, setAccounts] = useState([]);
@@ -32,7 +32,7 @@ const BasicDetails: React.FC = () => {
             {
                 (!usersData && usersData == undefined) ? 
                     <>
-                        <Loaderr/>
+                        <Loader/>
                     </>
                     :
 				usersData.map((individualUserData: any) => (

@@ -2,8 +2,7 @@
 import React, { useState} from "react";
 import axios from 'axios';
 import AccountForm from "../../components/AccountForm";
-import Link from "next/link";
-import ButtonLoading from "../../components/ButtonLoading"
+
 // import { Loader } from "../../components/SpinnerLoading";
 
 // import SpinnerLoading from "../../components/SpinnerLoading";
@@ -15,7 +14,7 @@ const [formValues, setFormValues] =
 
 const onSubmit = accountObject => {
 	axios.post(
-`https://7df4-119-82-104-94.in.ngrok.io/account/addaccount`,
+`http://localhost:3080/account/addaccount`,
 	accountObject)
 	.then(res => {
 		if (res.status === 200){

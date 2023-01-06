@@ -1,0 +1,8 @@
+import Apo from "../../components/basicDetailsusingSaga";
+export default function Life(){
+    return(
+        <div>
+            <Apo/>
+        </div>
+    );
+}

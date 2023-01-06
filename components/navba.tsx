@@ -11,9 +11,19 @@ const Navbar = () => {
         <ul className={Styles.ul}>
             <li className={Styles["active hover"]}>
             <Link href="/posts/register" className={Styles.a}>Register</Link> 
-            </li>               
+            </li>     
+            <li className={Styles["active hover"]}>
+                <Link href="/posts/list" className={Styles.a}>list</Link>
+            </li>          
                 <li className={Styles["active hover"]}>
                 <Link href="/posts/home" className={Styles.a}>Home</Link>
+            </li>             
+                
+            <li className={Styles["active hover"]}>
+                <Link href="/posts/sago" className={Styles.a}>Rsaga</Link>
+            </li>
+            <li className={Styles["active hover"]}>
+                <Link href="/posts/sago2" className={Styles.a}>Csaga</Link>
             </li>
         </ul>
     </nav>
