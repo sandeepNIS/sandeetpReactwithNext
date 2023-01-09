@@ -14,7 +14,7 @@ export default function Appy() {
   const user = useSelector((state:any) => state.users.user);
   return (
     <>
-        <h1>users</h1>
+        <h1>users from redux store</h1>
         {
             (!user && user == undefined) ? 
                 <>

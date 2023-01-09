@@ -23,6 +23,7 @@ const onSubmit = accountObject => {
 			const { username, email, password } = res.data;
         setFormValues({ username, email, password });
 		window.location.reload();
+
 		}
 		else
 		Promise.reject()

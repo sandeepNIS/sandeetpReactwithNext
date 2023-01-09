@@ -1,7 +1,7 @@
 import axios from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
-import { fetchPostsRequest, getUsers } from "../actions/userActions";
-import { getUsersData } from "../actions/userActions";
+
+import { fetchPostsRequest, getUsersData, setUser } from "../actions/userActions";
 const getPosts = () =>
   axios.get("http://localhost:3080/account/list");
 

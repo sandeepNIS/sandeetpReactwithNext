@@ -7,9 +7,11 @@ export const getUsersData=(userData: any)=> {
         payload: userData
     }
 }
-// export const fetchPostsRequest = ()=> ({
-//     type: "FETCH_POST_REQUEST"
-//   });
+export const fetchPostsRequest = ()=> ({
+    type: "FETCH_POST_REQUEST"
+  });
+
+
 
 export const getUser = () => ({
     type:GET_USER 

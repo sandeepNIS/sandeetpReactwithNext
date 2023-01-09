@@ -48,7 +48,9 @@ export const store = createStore(
     composeWithDevTools(applyMiddleware(...middleware,logger,thunk))
     // Add thunk middleware
 )
-sagaMiddleware.run(watcherSaga);
+
+// Run redux-saga
+sagaMiddleware.run(watcherSaga); 
 
 
 

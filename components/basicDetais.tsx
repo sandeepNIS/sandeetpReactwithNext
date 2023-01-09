@@ -46,7 +46,7 @@ const BasicDetails: React.FC = () => {
 
     return (
         <>
-            <h1>users</h1>
+            <h1>users using redux thunk</h1>
             {
                 (!usersData && usersData == undefined) ? 
                     <>

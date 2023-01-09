@@ -13,7 +13,8 @@ import { useSelector } from 'react-redux'
       return (
         <>
         
-        <h1>Users list</h1>
+        
+        <h1>Users list using redux thunk</h1>
         
               {      
             

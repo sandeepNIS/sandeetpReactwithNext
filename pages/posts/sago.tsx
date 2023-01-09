@@ -9,12 +9,12 @@ export default function Appo() {
 
   useEffect(() => {
     dispatch(getUser());
-  }, []);
+  }, []);//You need to put empty array (dependency) after the callback function: so the api doesnt run infinitely
 
   const user = useSelector((state:any) => state.users.user);
   return (
     <>
-        <h1>users</h1>
+        <h1>users from the redux saga store</h1>
         {
             (!user && user == undefined) ? 
                 <>

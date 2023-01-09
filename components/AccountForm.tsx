@@ -20,7 +20,7 @@ return (
 	<Formik {...props} validationSchema={validationSchema}>
         <center>
            
-		<Form className={Styles.form}>
+		<Form className={Styles.form} > 
 		<FormGroup>
         <FormLabel >Name</FormLabel>
 			<Field   name="username" type="text"
@@ -57,6 +57,7 @@ return (
 		<Button variant="danger" size="sm"
 		type="submit" >
 			{props.children}
+			<i className="loading-spinner fa fa-lg fas fas-spinner fa-spin"></i>
 		</Button>
 		</Form>
         </center>
