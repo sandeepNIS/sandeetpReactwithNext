@@ -103,15 +103,19 @@ const onSubmit = accountObject => {
 	setLoading(true)
 
 	axios.post(
-`http://localhost:3080/account/addaccountT`,
+`http://localhost:3080/account/addaccount`,
 	accountObject)
 	.then(res => {	
-		// setMessage("Created successfully");
+		setMessage("Created successfully");
 		setTimeout(()=>{
 				setLoading(false)
 			},1000)
 		if (res.status === 200){
-			setMessage("Created successfully!");
+
+			toast.success('Success Notification !', {
+				position: toast.POSITION.TOP_RIGHT
+			});
+			// setMessage("Created successfully!");
 			// setTimeout(()=>{
 			// 	setLoading(false)
 			// },1000)
@@ -142,7 +146,11 @@ const onSubmit = accountObject => {
 
 		
 	})
-	.catch(err => {setMessage("Some error occured!")
+	.catch(err => {
+		setMessage("Some error occured!")
+	toast.error('Error Notification !', {
+		position: toast.POSITION.TOP_CENTER
+	});
 	setTimeout(()=>{
 		setLoading(false)
 	},1000)
@@ -154,19 +162,22 @@ const onSubmit = accountObject => {
 	}
 
 return(
-	
-	// <AccountForm initialValues={formValues}
-	// onSubmit={onSubmit}
+	<>
+	{/* <AccountForm initialValues={formValues} */}
+	{/* // onSubmit={onSubmit}
 	// enableReinitialize>
-	// Create Account
-	// <div style={style}>
+	// Create Account */}
+	<ToastContainer />
+	{/* // <div style={style}> */}
 	<div style={{ position: "fixed",top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} > 
+	{/* <div> */}
 	{!loading && <AccountForm initialValues={formValues} onSubmit={onSubmit}
 	enableReinitialize>
 	Create Account
 	</AccountForm>}
 	{loading && (<ClipLoader  className="clip"  loading={loading} size={100} />)}
 	<div className="message">{message ? <h6>{message}</h6> :null}</div>
+	
 	{/* {status?.type === 'success' && <p>"Account succesfully created"</p>}
       {status?.type === 'error' && (
         <p>"Error "</p>)} */}
@@ -187,6 +198,7 @@ return(
         <CircularProgress color="inherit" />
       </Backdrop>} */}
 	</div>
+	</>
 )
 }
 
