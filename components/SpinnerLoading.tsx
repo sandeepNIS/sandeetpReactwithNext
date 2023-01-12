@@ -12,7 +12,7 @@
 //   )
 // }
 import React from 'react'
-export default function Loader(){
+export default function Loaderr(){
   return(
     <>
     <div className="loaderIcon"></div>

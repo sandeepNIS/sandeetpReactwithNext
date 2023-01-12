@@ -11,6 +11,11 @@
     "dev": " concurrently \"npm run server\" \"next dev\" "
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.4",
+    "@mui/styled-engine-sc": "^5.11.0",
     "@next/font": "13.0.7",
     "axios": "^1.2.1",
     "babel-plugin-inline-dotenv": "^1.7.0",
@@ -29,12 +34,15 @@
     "react-loader-spinner": "^5.3.4",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.0",
+    "react-spinners": "^0.13.7",
+    "reactstrap": "^9.1.5",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.2",
     "redux-thunk": "^2.4.2",
+    "styled-components": "^5.3.6",
     "superagent": "^8.0.6",
     "swr": "^2.0.0",
     "yup": "^0.32.11"
