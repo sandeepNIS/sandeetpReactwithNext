@@ -56,7 +56,7 @@ const Register = () => {
 //   },
 // }));
 const [loading, setLoading] = useState(false);
-const [status, setStatus] = useState(undefined);
+// const [status, setStatus] = useState(undefined);
 // useEffect(() => {
 //     setLoading(true)
 // 	setTimeout(()=>{
@@ -109,11 +109,11 @@ const onSubmit = accountObject => {
 		setMessage("Created successfully");
 		setTimeout(()=>{
 				setLoading(false)
-			},1000)
+			},500)
 		if (res.status === 200){
 
 			toast.success('Success Notification !', {
-				position: toast.POSITION.TOP_RIGHT
+				position: toast.POSITION.TOP_CENTER
 			});
 			// setMessage("Created successfully!");
 			// setTimeout(()=>{
@@ -153,7 +153,7 @@ const onSubmit = accountObject => {
 	});
 	setTimeout(()=>{
 		setLoading(false)
-	},1000)
+	},500)
 }
 		
 		
