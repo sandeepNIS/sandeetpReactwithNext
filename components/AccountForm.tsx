@@ -6,8 +6,8 @@ import { FormGroup, FormLabel, Button } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.css';
 import Styles from './AccountForm.module.css'
 //   import Loader from "react-loader-spinner";
-import Loaderr from './SpinnerLoading';
-import ClipLoader from "react-spinners/ClipLoader";
+// import Loaderr from './SpinnerLoading';
+// import ClipLoader from "react-spinners/ClipLoader";
 
 const AccountForm = (props) => {
 const validationSchema = Yup.object().shape({
@@ -101,9 +101,9 @@ return (
 		<Button variant="danger" size="sm"
 		type="submit"  >
 			{props.children}
-			{/* {loading && (<ClipLoader color={'black'} loading={loading} size={100}/>)} */}
+			{/* {loading && (<ClipLoader color={'black'} loading={loading} size={100}/>)}
 			{/* {isModal && (
-		<Loaderr/>)}	 */}
+		// <Loaderr/>)}	  */}
 		  
 		</Button>
 		

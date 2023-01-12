@@ -22,9 +22,9 @@ const Navbar = () => {
             <li className={Styles["active hover"]}>
                 <Link href="/posts/sago" className={Styles.a}>Rsaga</Link>
             </li>
-            <li className={Styles["active hover"]}>
+            {/* <li className={Styles["active hover"]}>
                 <Link href="/posts/sago2" className={Styles.a}>Csaga</Link>
-            </li>
+            </li> */}
         </ul>
     </nav>
     )   
