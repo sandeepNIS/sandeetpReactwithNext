@@ -56,7 +56,7 @@ const Register = () => {
 //   },
 // }));
 const [loading, setLoading] = useState(false);
-// const [status, setStatus] = useState(undefined);
+const [status, setStatus] = useState(undefined);
 // useEffect(() => {
 //     setLoading(true)
 // 	setTimeout(()=>{
@@ -103,19 +103,19 @@ const onSubmit = accountObject => {
 	setLoading(true)
 
 	axios.post(
-`http://localhost:3080/account/addaccount`,
+`http://localhost:3080/account/addaccountT`,
 	accountObject)
 	.then(res => {	
-		setMessage("Created successfully");
+		// setMessage("Created successfully");
 		setTimeout(()=>{
 				setLoading(false)
 			},500)
 		if (res.status === 200){
 
-			toast.success('Success Notification !', {
+			toast.success('Account Successfully Created !!!', {
 				position: toast.POSITION.TOP_CENTER
 			});
-			// setMessage("Created successfully!");
+			setMessage("Created successfully!");
 			// setTimeout(()=>{
 			// 	setLoading(false)
 			// },1000)
@@ -136,7 +136,7 @@ const onSubmit = accountObject => {
         setFormValues({ username, email, password });
 		
 		// window.location.reload();
-		// setStatus({ type: 'success' });
+		setStatus({ type: 'success' });
 		
 			
 
@@ -148,7 +148,8 @@ const onSubmit = accountObject => {
 	})
 	.catch(err => {
 		setMessage("Some error occured!")
-	toast.error('Error Notification !', {
+		setStatus({ type: 'error' });
+	toast.error('Some Error Occured!', {
 		position: toast.POSITION.TOP_CENTER
 	});
 	setTimeout(()=>{
@@ -176,11 +177,11 @@ return(
 	Create Account
 	</AccountForm>}
 	{loading && (<ClipLoader  className="clip"  loading={loading} size={100} />)}
-	<div className="message">{message ? <h6>{message}</h6> :null}</div>
+	{/* <div className="message">{message ? <h6>{message}</h6> :null}</div> */}
 	
-	{/* {status?.type === 'success' && <p>"Account succesfully created"</p>}
+	{status?.type === 'success' && <p>Succesfully Registered</p>}
       {status?.type === 'error' && (
-        <p>"Error "</p>)} */}
+        <p>  Error!!! </p>)}
 	  
 	{/* <style jsx>{`
         .clip{
