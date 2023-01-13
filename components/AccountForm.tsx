@@ -31,7 +31,7 @@
 
 // const [value, setValue] = useState(props.initialValues.username);
 // const [valuee, setValuee] = useState(props.initialValues.email);
-// const [valueee, setValueee] = useState(props.initialValues.username);
+// const [valueee, setValueee] = useState(props.initialValues.password);
 
 //   // A local state where we observe the formState.
 //   // For our simple app, the three states 'unchaged', 'modified' and 'saving' are
@@ -129,7 +129,7 @@
 
 // 				setFormState("unchanged");
 // 			  });
-// 			  saveToApi(valuee).then(() => {
+//               saveToApi(valuee).then(() => {
 // 				// save is done, so we can reset formState and value
 // 				setValuee("");
 				
@@ -233,12 +233,10 @@ import React,{useEffect, useState} from 'react';
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, FormLabel, Button } from "react-bootstrap";
-// import 'bootstrap/dist/css/bootstrap.css';
+import { useBeforeunload } from 'react-beforeunload';
 import Styles from './AccountForm.module.css'
 
-//   import Loader from "react-loader-spinner";
-// import Loaderr from './SpinnerLoading';
-// import ClipLoader from "react-spinners/ClipLoader";
+
 
 const AccountForm = (props) => {
 const validationSchema = Yup.object().shape({
@@ -247,81 +245,31 @@ const validationSchema = Yup.object().shape({
 	password: Yup.string().required("Required")
 });
 console.log(props);
-// const [loading, setLoading] = useState(false);
+useBeforeunload(() => "Are you sure to close this tab?");
+
+// window.addEventListener("beforeunload", (ev) => 
+// {  
+//     ev.preventDefault();
+//     return ev.returnValue = 'Are you sure you want to close?';
+// });
+
 // useEffect(() => {
-//     setLoading(true)
-// 	setTimeout(()=>{
-// 		setLoading(false)
-// 	},2000)
-//   }, []);
-// const [isModal, setState] = useState(false);
+//     window.addEventListener('beforeunload', alertUser)
+//     window.addEventListener('unload', handleTabClosing)
+//     return () => {
+//         window.removeEventListener('beforeunload', alertUser)
+//         window.removeEventListener('unload', handleTabClosing)
+//     }
+// })
 
-// const toggleUserModal = () => {
-//     setState(true);
-//   };
+// const handleTabClosing = () => {
+//     removePlayerFromGame()
+// }
 
-//   const handleCloseModal = () => {
-//     setState(false);
-//   };
-//   const closeLoaderIn5Seconds = () => {
-// 	setTimeout(() => {
-// 	  setState(
-// 		false
-// 	  );
-// 	}, 1000);
-//   };
-//   const handleSubmit = e => {
-// 	e.preventDefault();
-// 	setState(
-// 	  true
-// 	);
-// 	closeLoaderIn5Seconds();
-//   };
-
-//   const nameChangeHandler = (e) => {
-//     setName(e.target.value);
-//     userData.name = e.target.value;
-//   };
-// let username = '';
-//         let email = '';
-//         let password = '';
-  
-        // Functions to update the input text
-    //    const updateFname = () => {
-    //     username = document
-    //             .getElementsByName('username').values;
-    //     }
-  
-    //    const updateLname = () => {
-    //         email = document
-    //             .getElementsByName('email').values;
-    //     }
-  
-    //    const updateSubject = () => {
-    //         password = document
-    //             .getElementsByName('password').values;
-    //     }
-  
-    //     // Event listener for the 
-    //     // 'beforeunload' event
-    //     window.addEventListener('beforeunload', 
-    //                             function (e) {
-  
-    //         // Check if any of the input
-    //         // fields are filled
-    //         if (username !== '' ||
-    //             email !== '' ||
-    //             password !== '') {
-  
-    //             // Cancel the event and
-    //             // show alert that the unsaved
-    //             // changes would be lost
-    //             e.preventDefault();
-    //             e.returnValue = '';
-    //         }
-    //     });
-
-
+// const alertUser = (event:any) => {
+//     event.preventDefault()
+//     event.returnValue = ''
+// }
 
 return (
 	
@@ -373,9 +321,7 @@ return (
 		<Button variant="danger" size="sm"
 		type="submit"  >
 			{props.children}
-			{/* {loading && (<ClipLoader color={'black'} loading={loading} size={100}/>)}
-			{/* {isModal && (
-		// <Loaderr/>)}	  */}
+			
 		  
 		</Button>
 		
