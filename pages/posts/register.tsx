@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState} from "react";
 import axios from 'axios';
+// import AccountForm from "../../components/AccountForm";
 import AccountForm from "../../components/AccountForm";
 import 	ClipLoader
 from "react-spinners/ClipLoader";
@@ -20,7 +21,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 	// const notify = () => toast("Account succesfully created");
 		const style = { position: "fixed",top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
-
+		
+			
 // 	const [isModal, setState] = useState(false);
 // console.log(isModal);
 
@@ -103,7 +105,7 @@ const onSubmit = accountObject => {
 	setLoading(true)
 
 	axios.post(
-`http://localhost:3080/account/addaccountT`,
+`http://localhost:3080/account/addaccount`,
 	accountObject)
 	.then(res => {	
 		// setMessage("Created successfully");
