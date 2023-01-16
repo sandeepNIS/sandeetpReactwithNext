@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {  Form,Formik, Field, } from "formik";
 import { FormGroup, FormLabel } from "react-bootstrap";
+import axios from 'axios';
 
 
 export default function Example(props) {
@@ -38,8 +39,20 @@ export default function Example(props) {
   const formOnChageHandler = (e) => {
     e.preventDefault();
     props.getData(userData);
+    // let confirmAction=confirm("are you sure to delete");
+	axios
+	.put(`http://localhost:3080/account/:${id}`)
+	.then((res) => {
+		if (res.status === 200 ) {
+		alert("Account successfully UPDATED");
+		window.location.reload();
+		} else Promise.reject();
+	})
+	.catch((err) => alert("Something went wrong"));
     handleClose();
   };
+
+
   const fromOnSubmitHandler = (e) => {
     e.preventDefault();
   };

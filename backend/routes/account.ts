@@ -78,15 +78,15 @@ accountRoutes.get('/account/list', (req, res) => {
   
 
   // Update - using Put method
-// accountRoutes.put('/account/:id', (req, res) => {
-//     var existAccounts = getAccountData()
-//     fs.readFile(dataPath, 'utf8', (err, data) => {
-//       const accountId = req.params['id'];
-//       existAccounts[accountId] = req.body;
-//       saveAccountData(existAccounts);
-//       res.send(`accounts with id ${accountId} has been updated`)
-//     }, true);
-//   });
+accountRoutes.put('/account/:id', (req, res) => {
+    var existAccounts = getAccountData()
+    fs.readFile(dataPath, 'utf8', (err, data) => {
+      const accountId = req.params['id'];
+      existAccounts[accountId] = req.body;
+      saveAccountData(existAccounts);
+      res.send(`accounts with id ${accountId} has been updated`)
+    }, true);
+  });
 
   // delete - using delete method
 accountRoutes.delete('/account/delete/:id', (req, res) => {
