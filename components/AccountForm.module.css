@@ -1,0 +1,13 @@
+.form {
+    width: 300px;
+    border: 1px solid;
+    padding: 20px;
+  }
+  
+  @media only screen and (max-width: 360px) {
+    .form {
+        width: 220px;
+        border: 2px solid;
+        padding: 20px;
+    }
+  }

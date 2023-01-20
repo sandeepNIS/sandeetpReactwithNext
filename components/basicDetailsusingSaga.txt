@@ -1,0 +1,42 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPostsRequest } from "../redux/actions/userActions";
+// import { fetchPostsRequest } from "../_redux/actions/postsActions/postsActions";
+// import { RootState } from "../redux/reducers";
+import Loader from "./loader";
+
+const App = () => {
+  const dispatch = useDispatch();
+  const usersData = useSelector((state: any) => state?.users?.usersData);
+
+
+  useEffect(() => {
+    dispatch(fetchPostsRequest());
+  }, []);
+
+  return (
+    <>
+    <h1>users</h1>
+    {
+        (!usersData && usersData == undefined) ? 
+            <>
+                <Loader/>
+            </>
+            :
+            usersData.map((individualUserData: any) => {
+                return (
+                    <>  
+                        <h4>ID: {individualUserData.id}</h4>
+                        <h4>Name: {individualUserData.username}</h4>
+                        <h4>Email: {individualUserData.email}</h4>
+                    </>
+                )
+            })  
+    }
+    
+</>
+
+  );
+};
+
+export default App;
